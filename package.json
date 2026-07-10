@@ -5,8 +5,6 @@
   "main": "api/wakatimeStats.js",
   "scripts": {
     "dev": "node api/wakatimeStats.js",
-    "start": "node server/server.js",
-    "build": "vercel build",
     "deploy": "vercel deploy"
   },
   "dependencies": {
