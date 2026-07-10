@@ -297,6 +297,17 @@
     "heatmap_color": "58a6ff"
   },
   {
+    "theme_name": "dark_github_transparent",
+    "bg_color": "00000000",
+    "text_color": "c9d1d9",
+    "border_color": "00000000",
+    "title_color": "58a6ff",
+    "chart_color": "58a6ff",
+    "rank_color": "58a6ff",
+    "logo_color": "58a6ff",
+    "heatmap_color": "58a6ff"
+  },
+  {
     "theme_name": "classic_monokai",
     "bg_color": "2d2d2d",
     "text_color": "cccccc",
