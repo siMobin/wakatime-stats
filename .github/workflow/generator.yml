@@ -1,6 +1,9 @@
 name: Update WakaTime Stats SVG
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron: "0 */6 * * *" # every 6 hours
   workflow_dispatch:
@@ -23,7 +26,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p wakatime
-          curl -fsSL "https://wakatime-readme-stats.vercel.app/api/wakatimeStats?username=$GITHUB_ACTOR&api_key=$WAKATIME_API_KEY&github_token=$GITHUB_TOKEN" \
+          curl -fsSL "https://wakatime-stats-psi.vercel.app/api/wakatimeStats?username=$GITHUB_ACTOR&api_key=$WAKATIME_API_KEY&github_token=$GITHUB_TOKEN&theme=dark_github" \
             -o wakatime/stats.svg
 
       - name: Bump README cache-buster for wakatime/stats.svg (daily)
