@@ -5,8 +5,8 @@
     y="1"
     width="348"
     height="288"
-    fill="#0d1117"
-    stroke="#c9d1d9"
+    fill="#00000000"
+    stroke="#00000000"
     stroke-width="2"
     rx="10"
     ry="10"
@@ -15,7 +15,7 @@
   <g transform="translate(25, 10) scale(1)">
       <svg width="300" height="260" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
         <text x="50%" y="22" text-anchor="middle" font-size="14" fill="#c9d1d9" font-family="Calibri">
-          <tspan font-weight="bold">2 hrs 12 mins</tspan>
+          <tspan font-weight="bold">2 hrs 35 mins</tspan>
           <tspan font-weight="normal"> Today</tspan>
         </text>
         
@@ -83,7 +83,7 @@
     </g>
   
         
-    <polygon points="153.58041659155208,158.21657155149455 116.11485947839667,91.97208476051028 146.41958340844792,161.78342844850545" fill="#0278ff" />
+    <polygon points="153.86282337730205,158.96144544882378 130.26746352765187,86.60635583126117 146.13717662269795,161.03855455117622" fill="#0278ff" />
     <circle cx="150" cy="160" r="4" fill="#0278ff"/>
   
         
@@ -91,11 +91,11 @@
           
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9d1d9" stroke-width="3"
          stroke-linecap="round" stroke-linejoin="round">
-      <line x1="12" y1="5" x2="12" y2="19"></line>
-      <polyline points="19 12 12 19 5 12"></polyline>
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
     </svg>
           <text x="20" y="12" font-size="13" fill="#c9d1d9" font-family="Calibri">
-              3% decrease
+              14% increase
           </text>
         </g>
         <text x="50%" y="230" text-anchor="middle" font-size="13" fill="#c9d1d9" font-family="Calibri">
