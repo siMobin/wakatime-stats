@@ -72,24 +72,29 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Generate SVG from Vercel API
+      - name: Generate all SVGs from Vercel API
         env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           mkdir -p wakatime
-          curl -fsSL "https://wakatime-readme-stats.vercel.app/api/wakatimeStats?username=$GITHUB_ACTOR&api_key=$WAKATIME_API_KEY&github_token=$GITHUB_TOKEN" \
-            -o wakatime/stats.svg
 
-      - name: Bump README cache-buster for wakatime/stats.svg (daily)
+          BASE="https://wakatime-readme-stats.vercel.app/api/wakatimeStats?username=$GITHUB_ACTOR&api_key=$WAKATIME_API_KEY&github_token=$GITHUB_TOKEN&theme=dark_github&components=1"
+
+          for type in rank basic heatmap weekly weekly_avg weekly_langs weekly_projs all_langs all_projs spedometer ai_coding ai_agent personal_info; do
+            echo "Generating wakatime/${type}.svg"
+            curl -fsSL "${BASE}&component1_type=${type}" -o "wakatime/${type}.svg"
+          done
+
+      - name: Bump README cache-busters (daily)
         run: |
           set -euo pipefail
 
           V="$(date -u +%Y%m%d)"  # changes once per day
 
-          sed -i -E "s#(wakatime/stats\.svg)\?v=[0-9]+#\1?v=$V#g" README.md
-          sed -i -E "s#(wakatime/stats\.svg)(\"|')#\1?v=$V\2#g" README.md
+          sed -i -E "s#(wakatime/[a-z_]+\.svg)\?v=[0-9]+#\1?v=$V#g" README.md
+          sed -i -E "s#(wakatime/[a-z_]+\.svg)(\"|')#\1?v=$V\2#g" README.md
 
       - name: Commit changes to repo
         run: |
@@ -97,16 +102,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add wakatime/stats.svg README.md
+          git add wakatime/ README.md
           git diff --cached --quiet && echo "No changes" && exit 0
 
-          git commit -m "Update WakaTime stats SVG (cache-bust v=$(date -u +%Y%m%d))"
+          git commit -m "Update WakaTime stats SVGs (cache-bust v=$(date -u +%Y%m%d))"
           git push
 ```
 </details>
 
 4. **Add the Stats Card to your README**
-   - Add this to your readme: ```md <img src="wakatime/stats.svg?v=1" height="300"/>```
+   - Add this to your readme: ```md <img src="wakatime/rank.svg?v=1" height="300"/>``` (or use any other type like `basic.svg`, `heatmap.svg`, etc.)
    - To update immediately, navigate to actions -> Update WakaTime Stats SVG (or other name used) -> Run Workflow and click **Run Now**.
    - If you’re using a profile README (<username>/<username> repo), put the workflow in that repo (the same place as the README being edited).
 
