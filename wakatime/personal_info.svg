@@ -17,10 +17,6 @@
 
   <text x="200" y="95" text-anchor="middle" fill="#c9d1d9" font-size="36" font-weight="bold" font-family="Calibri">566</text>
   <text x="200" y="118" text-anchor="middle" fill="#c9d1d9" font-size="16" font-family="Calibri">hrs</text>
-
-  <text x="200" y="155" text-anchor="middle" fill="#c9d1d9" font-size="13" font-family="Calibri">
-    <tspan font-weight="bold">Current Day:</tspan> Fri Jul 10th, 2026
-  </text>
   <text x="200" y="178" text-anchor="middle" fill="#c9d1d9" font-size="13" font-family="Calibri">
     <tspan font-weight="bold">Daily Average:</tspan> 3 hrs 3 mins
   </text>
