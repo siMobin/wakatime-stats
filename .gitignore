@@ -6,4 +6,4 @@ out/
 .env*
 .vercel
 .env*.local
-wakatime/
+
