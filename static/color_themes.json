@@ -308,6 +308,17 @@
     "heatmap_color": "58a6ff"
   },
   {
+    "theme_name": "tokyo_night_transparent",
+    "bg_color": "00000000",
+    "text_color": "37b7a8",
+    "border_color": "00000000",
+    "title_color": "006aff",
+    "chart_color": "006aff",
+    "rank_color": "006aff",
+    "logo_color": "006aff",
+    "heatmap_color": "006aff"
+  },
+  {
     "theme_name": "classic_monokai",
     "bg_color": "2d2d2d",
     "text_color": "cccccc",
