@@ -112,9 +112,9 @@ jobs:
 
 4. **Add the Stats Card to your README**
 <<<<<<< HEAD
-   - Add this to your readme: ```md <img src="wakatime/rank.svg?v=20260710" height="300"/>``` (or use any other type like `basic.svg`, `heatmap.svg`, etc.)
+   - Add this to your readme: ```md <img src="wakatime/rank.svg?v=20260711" height="300"/>``` (or use any other type like `basic.svg`, `heatmap.svg`, etc.)
 =======
-   - Add this to your readme: ```md <img src="wakatime/stats.svg?v=20260710" height="300"/>```
+   - Add this to your readme: ```md <img src="wakatime/stats.svg?v=20260711" height="300"/>```
 >>>>>>> 832ff57469df1a0f23dfddf2820d1b2c1d55792d
    - To update immediately, navigate to actions -> Update WakaTime Stats SVG (or other name used) -> Run Workflow and click **Run Now**.
    - If you’re using a profile README (<username>/<username> repo), put the workflow in that repo (the same place as the README being edited).
