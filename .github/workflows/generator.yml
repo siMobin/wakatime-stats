@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: "0 12 * * *" # every Friday at 12:00
+  # schedule:
+  #   - cron: "0 12 * * *"
   workflow_dispatch:
 
 permissions:
@@ -16,8 +16,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Waiting for Vercel to finish deploying the API
+        run: sleep 60
+
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Continue workflow after 1 minute
+        run: echo "Running after 1 minute"
 
       - name: Generate all SVGs from Vercel API
         env:
